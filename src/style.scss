@@ -1,0 +1,131 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+@font-face {
+  font-family: 'Font-awesome';
+  src: url(@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf) format('truetype');
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Font-awesome',sans-serif;
+}
+
+.container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(42 36 36 / 28%);
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form__field {
+      transform: skewX(-50deg);
+      width: 60%;
+      height: 100%;
+      overflow: hidden;
+      border-width:2px 1px 2px 2px;
+      border-style: solid;
+      border-color: white;
+      transition: 0.7s all;
+      cursor: pointer;
+      .form__error {
+        color: red;       
+        font-size: 10px;
+        display: none;
+        transform: skewX(50deg);
+        padding-left: 1vw;
+        margin-top: -1.5vh;
+      }
+      .input__tel{
+        transform: skewX(50deg);
+        outline: none;
+        border: none;
+        padding: 2vh 0 2vh 2vw;
+        font-size: 25px;
+        background: transparent;
+        color:rgba(14, 13, 13, 0.87);
+        font-weight: normal;
+        width: 95%;
+        cursor: pointer;
+        &:invalid:not(:placeholder-shown) + .form__error {
+          display: block;
+        }
+      }
+    }
+    .label__submit{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1vw;
+      transform: skewX(-50deg);
+      background-color: red;
+      width: 41%;
+      height: 100%;
+      overflow: hidden;
+      border-width:2px 2px 2px 1px;
+      border-style: solid;
+      border-color: white;
+      cursor: pointer;
+      transition: 0.7s all;
+      &:hover{
+        background-color: rgb(168, 31, 31);
+      }
+      .submit{
+        transform: skewX(50deg);
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 25px;
+        color:white;
+        font-weight: normal;
+        cursor: pointer;
+      }
+      .submit__ico{
+        transform: skewX(50deg);
+        font-size: 25px;
+        color:white;
+      }
+    }
+  }
+}
+
+
+@media (max-width:768px){
+  .container{
+    .form{
+      .form__field {
+        transform: skewX(0deg);
+        width: 50vw;
+        .form__error{
+          transform: skew(0deg);
+        }
+        .input__tel{
+          transform: skew(0deg);
+          font-size: 18px;
+        }
+      }
+      .label__submit{
+        transform: skew(0deg);
+        width: 40vw;
+        .submit{
+          transform: skew(0deg);
+          font-size: 18px;
+        }
+        .submit__ico{
+          transform: skew(0deg);
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
